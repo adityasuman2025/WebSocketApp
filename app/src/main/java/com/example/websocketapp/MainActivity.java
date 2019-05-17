@@ -1,15 +1,9 @@
 package com.example.websocketapp;
 
-import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -20,10 +14,16 @@ import okio.ByteString;
 
 public class MainActivity extends AppCompatActivity
 {
-    private Button start;
-    private TextView output;
+    TextView output;
+    TextView EQUIP_STATUS;
+    TextView LOCATION_ALERT;
+    TextView MEORx;
+    TextView POWER_SUPPLY;
+    TextView UP_DOWN_CON;
+    TextView timestamps;
+
     private OkHttpClient client;
-    
+
     private final class EchoWebSocketListener extends WebSocketListener
     {
         private static final int NORMAL_CLOSURE_STATUS = 1000;
