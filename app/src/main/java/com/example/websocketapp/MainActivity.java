@@ -64,11 +64,11 @@ public class MainActivity extends AppCompatActivity
         output = (TextView) findViewById(R.id.output);
 
         client = new OkHttpClient();
-        Request request = new Request.Builder().url("ws://192.168.43.10:3030").build();
+        Request request = new Request.Builder().url("ws://192.168.43.11:3030").build();
         // in android emulator localhost/127.0.0.1 is equal to 10.0.2.2
         // in android mobile phone localhost/127.0.0.1 is equal to 192.168.X.X
         //Open cmd in windows
-        //type "ipconfig" then press enter
+        //type "ipconfig" or "ifconfig" then press enter
         //find IPv4 Address. . . . . . . . . . . : 192.168.X.
 
         EchoWebSocketListener listener = new EchoWebSocketListener();
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                output.setText(output.getText().toString() + "\n\n" + txt);
+                output.setText(txt);
             }
         });
     }
