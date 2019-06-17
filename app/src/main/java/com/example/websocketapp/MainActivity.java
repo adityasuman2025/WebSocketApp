@@ -15,12 +15,6 @@ import okio.ByteString;
 public class MainActivity extends AppCompatActivity
 {
     TextView output;
-    TextView EQUIP_STATUS;
-    TextView LOCATION_ALERT;
-    TextView MEORx;
-    TextView POWER_SUPPLY;
-    TextView UP_DOWN_CON;
-    TextView timestamps;
 
     private OkHttpClient client;
 
@@ -64,7 +58,7 @@ public class MainActivity extends AppCompatActivity
         output = (TextView) findViewById(R.id.output);
 
         client = new OkHttpClient();
-        Request request = new Request.Builder().url("ws://192.168.43.11:3030").build();
+        Request request = new Request.Builder().url("ws://192.168.43.10:3030").build();
         // in android emulator localhost/127.0.0.1 is equal to 10.0.2.2
         // in android mobile phone localhost/127.0.0.1 is equal to 192.168.X.X
         //Open cmd in windows
